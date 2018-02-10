@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="JuanEstebanHelpPopup.NamePhonePopUp">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Margin="25,50,25,50" BackgroundColor="White" HeightRequest="300" VerticalOptions="Center">
+                <StackLayout>
+                    <Label Text="Name:"></Label>
+                    <Entry Placeholder="Name"></Entry>
+                    <Label Text="Phone:"></Label>
+                    <Entry Placeholder="Phone"></Entry>
+                    <StackLayout>
+                        <Button Text="DoSomething"></Button>
+                        <Button Text="Close" Clicked="Close_OnClicked"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>
