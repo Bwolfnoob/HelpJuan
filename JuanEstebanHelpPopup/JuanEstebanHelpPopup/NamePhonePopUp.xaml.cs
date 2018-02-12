@@ -12,10 +12,12 @@ namespace JuanEstebanHelpPopup
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NamePhonePopUp 
 	{
-		public NamePhonePopUp ()
-		{
-			InitializeComponent ();
-		}
+
+	    public NamePhonePopUp (ref string nome)
+	    {	        
+	        nome = "teste";
+	        InitializeComponent ();
+	    }
 	    private async void Close_OnClicked(object sender, EventArgs e)
 	    {
 	      await  PopupNavigation.PopAsync();
