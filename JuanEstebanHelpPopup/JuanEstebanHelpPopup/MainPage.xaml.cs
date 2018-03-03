@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Android.App;
+using Android.Database;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
@@ -15,7 +17,9 @@ namespace JuanEstebanHelpPopup
 		public MainPage()
 		{
 			InitializeComponent();
-		}
+		  //  Lista.ItemsSource = new ObservableCollection<>
+
+        }
 
 	    private async void OpenPopup(object sender, EventArgs e)
 	    {
