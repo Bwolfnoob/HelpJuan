@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Android.App;
-using Android.Database;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using Rg.Plugins.Popup.Services;
 using Xamarin.Forms;
 
@@ -34,5 +29,29 @@ namespace JuanEstebanHelpPopup
             await PopupNavigation.PushAsync(page: page);
 	        var a = nome;
 	    }
-	}
+
+	    private async void Button_OnClicked(object sender, EventArgs e)
+	    {
+	        await CrossMedia.Current.Initialize();
+
+	        if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+	        {
+	            await DisplayAlert("Erro", ":( Nenhuma camera encontrada.", "OK");
+	            return;
+	        }
+
+	        var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+	        {
+	            Directory = "CredDefence",
+	            Name = "CredDefence_Foto.jpg",
+	            PhotoSize = PhotoSize.Medium
+	        });
+
+	        if (file == null)
+	        {
+	            await DisplayAlert("Title","A operação foi cancelada pelo usuário.","Ok");
+	        }
+	       
+        }
+    }
 }

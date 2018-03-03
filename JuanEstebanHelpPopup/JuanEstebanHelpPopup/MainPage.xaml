@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:JuanEstebanHelpPopup"
-             BackgroundImage="splashscreen_aniversario"
+             BackgroundImage="icon"
              x:Class="JuanEstebanHelpPopup.MainPage">
 <StackLayout>
    
 
         <Button Text="Open PopUp" Clicked="OpenPopup"></Button>
-    
+    <Button Text="Take a Picture" Clicked="Button_OnClicked"></Button>
 </StackLayout>
 </ContentPage>
