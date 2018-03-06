@@ -27,6 +27,7 @@
       <DependentUpon>NamePhonePopUp.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FuncionalidadesViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)NamePhonePopUp.xaml">

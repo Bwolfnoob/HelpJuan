@@ -9,5 +9,29 @@
 
         <Button Text="Open PopUp" Clicked="OpenPopup"></Button>
     <Button Text="Take a Picture" Clicked="Button_OnClicked"></Button>
-</StackLayout>
+
+    <ListView x:Name="menuA" 
+              ItemsSource="{Binding FuncionalidadesA}"
+              SelectedItem="{Binding FuncionalidadeSelecionada}"             
+              HasUnevenRows="true"
+              Margin="0"
+              HeightRequest="50">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Frame Margin="10" BackgroundColor="Brown">
+                            
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding MyImagemMenuA}" x:Name="imgMenuA" HeightRequest="20" WidthRequest="20"/>
+                            <Label Text="{Binding Funcionalidade}" VerticalTextAlignment="Center" FontSize="20"/>
+                        </StackLayout>
+                        </Frame>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
+    </StackLayout>
 </ContentPage>

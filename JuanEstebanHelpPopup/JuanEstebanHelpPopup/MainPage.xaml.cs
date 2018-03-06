@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using JuanEstebanHelpPopup.ViewModels;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Rg.Plugins.Popup.Services;
@@ -8,11 +10,23 @@ namespace JuanEstebanHelpPopup
 {
 	public partial class MainPage : ContentPage
 	{
+
+	    public ObservableCollection<FuncionalidadesViewModel> FuncionalidadesA { get; set; } = new ObservableCollection<FuncionalidadesViewModel>();
+
 	    public string Nome { get; set; }
 		public MainPage()
 		{
 			InitializeComponent();
 		  //  Lista.ItemsSource = new ObservableCollection<>
+		    BindingContext = this;
+
+		    CarregarLista();
+		}
+
+	    private void CarregarLista()
+	    {
+	        FuncionalidadesA.Add(new FuncionalidadesViewModel(){MyImagemMenuA = "icon" , Funcionalidade = "Funcionalidade 01" });
+	        FuncionalidadesA.Add(new FuncionalidadesViewModel() { MyImagemMenuA = "icon", Funcionalidade = "Funcionalidade 02" });
 
         }
 
