@@ -1,37 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:JuanEstebanHelpPopup"
+             xmlns:listItens="clr-namespace:JuanEstebanHelpPopup.ListItens"
              BackgroundImage="icon"
              x:Class="JuanEstebanHelpPopup.MainPage">
-<StackLayout>
-   
+    <StackLayout>
 
-        <Button Text="Open PopUp" Clicked="OpenPopup"></Button>
-    <Button Text="Take a Picture" Clicked="Button_OnClicked"></Button>
+        <ListView x:Name="menuA" 
+                  ItemsSource="{Binding ListaDados}"
+                  HasUnevenRows="true"
+                  Margin="0"
+                  HeightRequest="50">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell StyleId="disclosure">
+                                <listItens:MainPageListItem/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-    <ListView x:Name="menuA" 
-              ItemsSource="{Binding FuncionalidadesA}"
-              SelectedItem="{Binding FuncionalidadeSelecionada}"             
-              HasUnevenRows="true"
-              Margin="0"
-              HeightRequest="50">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <ViewCell.View>
-                        <Frame Margin="10" BackgroundColor="Brown">
-                            
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="{Binding MyImagemMenuA}" x:Name="imgMenuA" HeightRequest="20" WidthRequest="20"/>
-                            <Label Text="{Binding Funcionalidade}" VerticalTextAlignment="Center" FontSize="20"/>
-                        </StackLayout>
-                        </Frame>
-                    </ViewCell.View>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
-    
+       
+        <!---->  
+    <!--<Button IsVisible="False" Text="Open PopUp" Clicked="OpenPopup"></Button>
+    <Button IsVisible="False" Text="Take a Picture" Clicked="Button_OnClicked"></Button>-->
     </StackLayout>
 </ContentPage>
